@@ -1,11 +1,12 @@
 <?php
 
-require_once "../gestionbbdd/bbdd.php";
+require_once "../include/BD.php";
 
-$nombre = $_REQUEST['nombre'];
+$nombre = $_REQUEST['nombreUsuario'];
 $password = $_REQUEST['password'];
+$rol= $_REQUEST['rol'];
 
-$usuario = GestionBBDD::insertUsusario($nombre, $password);
+$usuario = BD::insertUsusario($nombre, $password, $rol);
 
 if ($usuario > 0) {
     echo $nombre;

@@ -1,11 +1,11 @@
 <?php
 
-require_once "../gestionbbdd/bbdd.php";
+require_once "../include/BD.php";
 
 $nombre = $_REQUEST['nombre'];
 $password = $_REQUEST['password'];
 
-$usuario = GestionBBDD::getUsuario($nombre, $password);
+$usuario = Base::getUsuario($nombre, $password);
 
 if ($usuario != null) {
     $nombre = $usuario->getNombre();

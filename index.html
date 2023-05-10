@@ -82,7 +82,50 @@
 
         </div>
     </nav>
-
+<div class="modal fade" id="loginInicio" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close eliminar cabeza" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <form class="was-validated" id="formLogin" method="post">
+                <div class="modal-body border-0 cuerpo">
+                    <div>
+                        <label for="validationUser" class="form-label">
+                            <h5>Usuario</h5>
+                        </label>
+                        <input type="text" id="validationUser" class="form-control"
+                               placeholder="Nombre de usuario" required>
+                        <div class="invalid-feedback">
+                            Rellene el nombre de usuario
+                        </div>
+                        <div class="valid-feedback">
+                            Perfecto
+                        </div>
+                    </div>
+                    <div class="mt-2 contra">
+                        <label for="validationPsswrd" class="form-label">
+                            <h5>Contraseña</h5>
+                        </label>
+                        <input type="password" id="validationPsswrd" class="form-control"
+                               placeholder="123456" required>
+                        <div class="invalid-feedback">
+                            Rellene la contraseña
+                        </div>
+                        <div class="valid-feedback">
+                            Perfecto
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pie">
+                    <button type="submit" class="btn btn-danger" id="enviar">Iniciar</button>
+                    <button type="submit" class="btn btn-danger" id="register">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
