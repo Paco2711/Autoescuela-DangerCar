@@ -15,39 +15,38 @@ class Base{
         }
     }
 
-    public static function getUsuario($nombre, $password) {
+    public static function comprobarUsuario($usuario, $clave){
         try {
-            $sql = "select * from usuarios where nombreUsuario = :n_user and password = :n_password;";
+            $sql="select * from usuarios where nombreUsuario like '$usuario' and password like '$clave'";
             $conexion=self::realizarConexion();
-            $resultado=$conexion->prepare($sql);
-            $resultado->execute(array(":n_user"=>$nombre,":n_password"=>$password));
-            $fila=$resultado->fetch();
-            $usuario = null;
-            if ($fila != null) {
-                $usuario = new Usuario($fila);
+            $resultado=$conexion->query($sql);
+            $fila = $resultado->fetch();
+            if ($fila!=null){
+                return $fila;
+            }else{
+                return null;
+                $fila = $resultado->fetch();
+
             }
-            $resultado->closeCursor();
-            $conexion=null;
-            return ($usuario);
-        } catch (Exception $e) {
-            echo $e->getMessage();
+        } catch (PDOException $e) {
+            echo $sql . "<br>" . $e->getMessage();
         }
     }
 
-    public static function insertUsusario($nombre, $password, $rol) {
+    public static function insertar_usuario($usuario, $clave){
         try {
-            $sql = "insert into usuarios (nombreUsuario, password, rol) values (:n_user, :n_password, :n_rol);";
+            $sql="insert into usuarios (nombreUsuario, password)";
+            $sql.="VALUES ('$usuario', '$clave')";
             $conexion=self::realizarConexion();
-            $resultado=$conexion->prepare($sql);
-            $afectados = $resultado->execute(array(":n_user"=>$nombre,":n_password"=>$password, ":n_rol"=>$rol));
-            $resultado->closeCursor();
-            $conexion=null;
-            return ($afectados);
-        } catch (Exception $e) {
-            echo "Nombre de usuario ya existe, elige otro";
+            $afectados=$conexion->exec($sql);
+            if ($afectados > 0){
+                $mensaje= "Se ha creado el usuario correctamente";
+            }
+        } catch (PDOException $e){
+            $mensaje= "No se ha podido realizar la insercción del usuario";
         }
+        $conexion=null;
+        return $mensaje;
     }
-
-
 
 }

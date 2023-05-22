@@ -43,12 +43,12 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="MenuPermisos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-person-vcard"></i> Permisos
                     </a>
                     <ul class="dropdown-menu">
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuPermisosCoche" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-vcard"></i> COCHE
                         </a>
                         <ul class="dropdown-menu">
@@ -57,75 +57,69 @@
                         </ul>
                       </li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuPermisosMoto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-vcard"></i> MOTO
                         </a></li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuPermisosCamion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-vcard"></i> CAMION
                         </a></li>
                       <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuPermisosAutobus" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-vcard"></i> ATUOBUS
-                        </a></li>  
-                      </a></li>
+                        </a></li>
                     
                     </ul>
                 </li>
                 <li class="nav-link"><i class="bi bi-calendar2-week"></i> Reservar Práctica</li>
                 <li class="nav-link" ><i class="bi bi-card-list"></i> Realizar test</li>
-                <li class="nav-link" ><button type="button" class="btn btn-outline-dark login py-0 border-2" data-bs-toggle="modal" data-bs-target="#loginInicio">
-                    <i class="bi bi-person-fill-lock noRegister"></i>
+                <li class="nav-link" ><button type="button" id="botonIniciar" class="btn btn-outline-dark login py-0 border-2" data-bs-toggle="modal" data-bs-target="#loginInicio">
+                    <i class="bi bi-person-fill-lock noRegister" ></i>
                 </button> Inciar Sesión</li>
 
             </div>
 
         </div>
     </nav>
-<div class="modal fade" id="loginInicio" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header border-0">
-                <button type="button" class="btn-close eliminar cabeza" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+
+<div id="General">
+
+</div>
+<footer class="bg-dark text-white">
+
+    <div class="container text-center">
+        <div ps-0 class="row align-items-start">
+            <div class="col-6">
+                <h4>Nosotros</h4>
+                <p class="text-start">En Autoescuela DangerCar llebamos más de 20 años ofreciéndote la mejor calidad y el mejor precio del mercado. Contamos con profesores altamente cualificados y experimentados.</p>
+
             </div>
-            <form class="was-validated" id="formLogin" method="post">
-                <div class="modal-body border-0 cuerpo">
-                    <div>
-                        <label for="validationUser" class="form-label">
-                            <h5>Usuario</h5>
-                        </label>
-                        <input type="text" id="validationUser" class="form-control"
-                               placeholder="Nombre de usuario" required>
-                        <div class="invalid-feedback">
-                            Rellene el nombre de usuario
-                        </div>
-                        <div class="valid-feedback">
-                            Perfecto
-                        </div>
-                    </div>
-                    <div class="mt-2 contra">
-                        <label for="validationPsswrd" class="form-label">
-                            <h5>Contraseña</h5>
-                        </label>
-                        <input type="password" id="validationPsswrd" class="form-control"
-                               placeholder="123456" required>
-                        <div class="invalid-feedback">
-                            Rellene la contraseña
-                        </div>
-                        <div class="valid-feedback">
-                            Perfecto
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer border-0 pie">
-                    <button type="submit" class="btn btn-danger" id="enviar">Iniciar</button>
-                    <button type="submit" class="btn btn-danger" id="register">Registrarse</button>
-                </div>
-            </form>
+            <div class="col-6">
+                <h4>Servicios</h4>
+                <ul class="list-group list-group-flush">
+                    <li href="" class="list-group-item">Carnet de Moto</li>
+                    <li class="list-group-item">Carnet de Coche</li>
+                    <li class="list-group-item">Carnet de Camión</li>
+                    <li class="list-group-item">Carnet de Autobús</li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
+    <nav id="barraAbajo" class="navbar navbar-expand-lg text-muted p-0 ">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse d-lg-flex justify-content-start d-none" id="barraAviso">
+                <div class="navbar-nav">
+                    <a id="botonAviso" class="nav-link ps-5 pe-4">Aviso legal</a>
+                    <a class="nav-link  pe-4">Política de cookies</a>
+                    <a class="nav-link  pe-4"> Política de protección de datos</a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</footer>
+
 
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>

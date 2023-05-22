@@ -3,12 +3,10 @@
 class Usuario {
     private $nombreUsuario;
 	private $password;
-    private $rol;
 
     function __Construct ($registro){
         $this->nombreUsuario = $registro['nombreUsuario'];
         $this->password = $registro['password'];
-        $this->rol = $registro['rol'];
     }
 
     /**
@@ -41,22 +39,6 @@ class Usuario {
     public function setPassword($password)
     {
         $this->password = $password;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRol()
-    {
-        return $this->rol;
-    }
-
-    /**
-     * @param mixed $rol
-     */
-    public function setRol($rol)
-    {
-        $this->rol = $rol;
     }
     
 
