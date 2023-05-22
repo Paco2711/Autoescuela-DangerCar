@@ -2,33 +2,35 @@
 include_once("tablas/usuarios.php");
 include_once("BD.php");
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoescuela DangerCar</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/miscript.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/miscript.js"></script>
 </head>
 
-<body class="iniciar">
-
-
+<body>
+<div class="izquierda"> <img class="img2" src="../img/logo.png"><img class="img1" src="../img/descarga.jpeg"></div>
+<div class="derecha m-auto text-center">
 <form name="form1" method="post" action="paginaUsuario.html">
 
-    <div class="general w-50 text-center">
-        <p class="fw-bolder fs-1 titulo">Cine La Butaca</p>
-        <h1 class="text-body font-monospace">Iniciar Sesión</h1>
-        <label class="me-4 ">Usuario</label><input type="text" name="frmNombre" size="30"><br>
-        <label class=" me-1 pt-3">Contraseña</label><input type="text" name="passwd" size="30"><br>
+            <label for="exampleInputEmail1" class="form-label fw-bold ">Introduce tu email</label>
+            <input type="email" class="form-control" name="frmNombre"  id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputPassword1" class="form-label fw-bold">Contraseña</label>
+            <input type="password" class="form-control" name="passwd"  id="exampleInputPassword1">
         <input class="mt-2 " type="submit" name="iniciar" value="Iniciar Sesión">
         <h3 class="d-block">¿Eres Nuevo?</h3><a class="text-white" href="crearUsuario.php">Regístrate Ahora</a>
     </div>
 </form>
-
+</div>
 <?php
 
 
@@ -48,6 +50,6 @@ if (isset($_POST['iniciar'])){
 }
 
 ?>
-
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

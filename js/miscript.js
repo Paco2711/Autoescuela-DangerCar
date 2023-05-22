@@ -8,17 +8,6 @@ $(document).ready(function() {
 
     //MOSTRAR UBICACION
 
-    $("#botonIniciar").click(function () {
-        $.ajax({
-            url: "../include/IniciarSesion.php",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
     $("#botonAviso").click(function () {
         $.ajax({
             url: "../include/AvisoLegal.html",
@@ -30,6 +19,29 @@ $(document).ready(function() {
             }
         });
     })
+    $("#botonCookies").click(function () {
+        $.ajax({
+            url: "../include/PoliticaDeCookies.html",
+            success: function (respuesta) {
+                $("#General").html(respuesta);
+            },
+            error: function () {
+                console.log("No se ha podido obtener la información");
+            }
+        });
+    })
+    $("#botonProteccion").click(function () {
+        $.ajax({
+            url: "../include/PoliticaProteccion.html",
+            success: function (respuesta) {
+                $("#General").html(respuesta);
+            },
+            error: function () {
+                console.log("No se ha podido obtener la información");
+            }
+        });
+    })
+
 
     // MOSTRAR HTML RESERVA
     $("#reserva").click(function () {
