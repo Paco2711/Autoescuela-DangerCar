@@ -18,31 +18,35 @@ include_once("BD.php");
 </head>
 
 <body>
-<div class="izquierda"> <img class="img2" src="../img/logo.png"><img class="img1" src="../img/descarga.jpeg"></div>
-<div class="derecha m-auto text-center">
-<form name="form1" method="post" action="paginaUsuario.html">
+<div class="general m-auto text-center text-white">
 
-            <label for="exampleInputEmail1" class="form-label fw-bold ">Introduce tu email</label>
-            <input type="email" class="form-control" name="frmNombre"  id="exampleInputEmail1" aria-describedby="emailHelp">
-            <label for="exampleInputPassword1" class="form-label fw-bold">Contraseña</label>
+   <div class="formulario w-50 m-auto">
+        <img class="w-25" src="../img/logon-removebg-preview.png">
+<form name="form1" method="post" action="IniciarSesion.php">
+
+        <br><label for="exampleInputEmail1" class="form-label fw-bold">Introduce tu email</label>
+            <input type="email" class="form-control" name="frmGmail"  id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputPassword1" class="mt-3 form-label fw-bold">Contraseña</label>
             <input type="password" class="form-control" name="passwd"  id="exampleInputPassword1">
-        <input class="mt-2 " type="submit" name="iniciar" value="Iniciar Sesión">
-        <h3 class="d-block">¿Eres Nuevo?</h3><a class="text-white" href="crearUsuario.php">Regístrate Ahora</a>
+        <button type="button" name="iniciar" class="mt-4 btn btn-outline-light">Iniciar Sesión</button>
+
+        <p class="mt-4 d-block">Aún no te has registrado con nosotros, ¿A qué esperas?<a class="text-white ms-4" href="crearUsuario.php">Regístrate Ahora aquí</a></p>
     </div>
 </form>
+    </div>
 </div>
 <?php
 
 
 if (isset($_POST['iniciar'])){
-    $usuario = $_POST['frmNombre'];
+    $usuario = $_POST['frmGmail'];
     $passwd = $_POST['passwd'];
     $mensaje = Base::comprobarUsuario($usuario,$passwd);
 
     if ($mensaje != false){
         session_start();
         $_SESSION["usuario"]=$usuario;
-        header('location:./Include/index.html?');
+        header('location:paginaUsuario.html');
         echo  $usuario;
     }else{
         echo '<script>alert("El usuario y/o la contraseña son incorrectas o no existen.")</script>';

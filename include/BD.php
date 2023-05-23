@@ -48,5 +48,21 @@ class Base{
         $conexion=null;
         return $mensaje;
     }
+    public static function insertar_alumno($dni,$fechaN, $nombre, $apellidos, $localidad, $provincia, $codPostal, $calle, $carnetPosesion){
+        try {
+            $sql="insert into alumnos (DNI,FechaNacimiento,Nombre,Apellidos,Localidad,Provincia, CodigoPostal, Calle, CarnetPosesion)";
+            $sql.="VALUES ('$dni', '$fechaN','$nombre','$apellidos','$localidad','$provincia','$codPostal','$calle','$carnetPosesion')";
+            $conexion=self::realizarConexion();
+            $afectados=$conexion->exec($sql);
+            if ($afectados > 0){
+                $mensaje= "Se ha creado el alumno correctamente";
+            }
+        } catch (PDOException $e){
+            $mensaje= "No se ha podido realizar la insercción del usuario";
+        }
+        $conexion=null;
+        return $mensaje;
+    }
+
 
 }
