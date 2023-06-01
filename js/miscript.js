@@ -35,7 +35,7 @@ $(document).ready(function() {
     })
     $("#menuPermisosCoche,#carnetCoche").click(function () {
         $.ajax({
-            url: "../include/PáginaCarnetCoche.html",
+            url: "../include/PaginaCarnetCoche.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
@@ -46,7 +46,18 @@ $(document).ready(function() {
     })
     $("#menuPermisosMoto,#carnetMoto").click(function () {
         $.ajax({
-            url: "../include/PáginaCarnetMoto.html",
+            url: "../include/PaginaCarnetMoto.html",
+            success: function (respuesta) {
+                $("#General").html(respuesta);
+            },
+            error: function () {
+                console.log("No se ha podido obtener la información");
+            }
+        });
+    })
+    $("#menuPermisosCamion,#carnetCamion").click(function () {
+        $.ajax({
+            url: "../include/PaginaCarnetCamion.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
