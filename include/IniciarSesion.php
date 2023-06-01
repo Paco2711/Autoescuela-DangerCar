@@ -9,7 +9,7 @@ include_once("BD.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoescuela DangerCar</title>
+    <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="../js/jquery-3.6.0.min.js"></script>
@@ -17,8 +17,8 @@ include_once("BD.php");
     <script src="../js/miscript.js"></script>
 </head>
 
-<body>
-<div class="general m-auto text-center text-white">
+<body class="general">
+<div class="m-auto text-center text-white">
 
    <div class="formulario w-50 m-auto">
         <img class="w-25" src="../img/logon-removebg-preview.png">
@@ -28,7 +28,7 @@ include_once("BD.php");
             <input type="email" class="form-control" name="frmGmail"  id="exampleInputEmail1" aria-describedby="emailHelp">
             <label for="exampleInputPassword1" class="mt-3 form-label fw-bold">Contraseña</label>
             <input type="password" class="form-control" name="passwd"  id="exampleInputPassword1">
-        <button type="button" name="iniciar" class="mt-4 btn btn-outline-light">Iniciar Sesión</button>
+        <button type="submit" name="iniciar" class="mt-4 btn btn-outline-light">Iniciar Sesión</button>
 
         <p class="mt-4 d-block">Aún no te has registrado con nosotros, ¿A qué esperas?<a class="text-white ms-4" href="crearUsuario.php">Regístrate Ahora aquí</a></p>
     </div>
