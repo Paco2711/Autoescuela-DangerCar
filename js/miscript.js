@@ -35,7 +35,7 @@ $(document).ready(function() {
     })
     $("#menuPermisosCoche,#carnetCoche").click(function () {
         $.ajax({
-            url: "../include/PaginaCarnetCoche.html",
+            url: "/include/PaginaCarnetCoche.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
@@ -46,7 +46,7 @@ $(document).ready(function() {
     })
     $("#menuPermisosMoto,#carnetMoto").click(function () {
         $.ajax({
-            url: "../include/PaginaCarnetMoto.html",
+            url: "/include/PaginaCarnetMoto.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
@@ -57,7 +57,7 @@ $(document).ready(function() {
     })
     $("#menuPermisosCamion,#carnetCamion").click(function () {
         $.ajax({
-            url: "../include/PaginaCarnetCamion.html",
+            url: "/include/PaginaCarnetCamion.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
@@ -66,72 +66,5 @@ $(document).ready(function() {
             }
         });
     })
-    $("#carnetB").click(function () {
-        $.ajax({
-            url: "../include/TiposCarnet/CarnetB.html",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
-    $("#carnetBE").click(function () {
-        $.ajax({
-            url: "../include/TiposCarnet/CarnetB+E.html",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
-    $("#carnetAM").click(function () {
-        $.ajax({
-            url: "../include/TiposCarnet/CarnetB.html",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
-    $("#carnetA1").click(function () {
-        $.ajax({
-            url: "../include/TiposCarnet/CarnetB.html",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
-    $("#carnetA2").click(function () {
-        $.ajax({
-            url: "../include/TiposCarnet/CarnetB.html",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
-    $("#carnetA").click(function () {
-        $.ajax({
-            url: "../include/TiposCarnet/CarnetB.html",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
-
 
 });
