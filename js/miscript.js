@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $("#botonAviso").click(function () {
         $.ajax({
-            url: "../include/AvisoLegal.html",
+            url: "include/AvisoLegal.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
@@ -13,7 +13,7 @@ $(document).ready(function() {
     })
     $("#botonCookies").click(function () {
         $.ajax({
-            url: "../include/PoliticaDeCookies.html",
+            url: "include/PoliticaDeCookies.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
@@ -24,7 +24,7 @@ $(document).ready(function() {
     })
     $("#botonProteccion").click(function () {
         $.ajax({
-            url: "../include/PoliticaProteccion.html",
+            url: "include/PoliticaProteccion.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
@@ -35,7 +35,7 @@ $(document).ready(function() {
     })
     $("#menuPermisosCoche,#carnetCoche").click(function () {
         $.ajax({
-            url: "/include/PaginaCarnetCoche.html",
+            url: "include/PaginaCarnetCoche.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
@@ -46,7 +46,7 @@ $(document).ready(function() {
     })
     $("#menuPermisosMoto,#carnetMoto").click(function () {
         $.ajax({
-            url: "/include/PaginaCarnetMoto.html",
+            url: "include/PaginaCarnetMoto.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
@@ -57,7 +57,7 @@ $(document).ready(function() {
     })
     $("#menuPermisosCamion,#carnetCamion").click(function () {
         $.ajax({
-            url: "/include/PaginaCarnetCamion.html",
+            url: "include/PaginaCarnetCamion.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
