@@ -120,4 +120,10 @@ background-image: url('../img/fondo.jpg');
     background-color: #a0c0a0;
     border: 0;
 }
-
+.encuentranos{
+    background-color: #a0c0a0;
+}
+.cuadros{
+    border: 1px solid red;
+    height: 380px;
+}
