@@ -56,6 +56,37 @@ background-image: url('../img/fondo.jpg');
     margin-left: 0.5rem;
 }
 
+.team .item img {
+    width: 92%;
+}
+.team .row>* { /*Quitar el padding del .row por defecto*/
+    padding: 0;
+}
+.team .fotoYDescripcion {
+    position: relative;
+}
+
+.team .des {
+    background-color: #a0c0a0 ;
+    color: white;
+    text-align: center;
+    border-top-right-radius: 93%;
+    transition: .3s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    width: 92%;
+}
+
+.team .item:hover .des {
+    height: 100%;
+    background-color: #a0c0a0;
+    opacity: .7;
+    position: absolute;
+    width: 92%;
+    bottom: 0;
+    border-top-right-radius: 0;
+}
+
 .titular {
     background-image: url('../img/panoramicacoche.jpg');
     background-position: center;
