@@ -34,16 +34,4 @@ $(document).ready(function() {
         });
     })
 
-    $("#carnetA1").click(function (){
-        $.ajax({
-            url: "tiposCarnet/carnetA1.html",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
-
 });

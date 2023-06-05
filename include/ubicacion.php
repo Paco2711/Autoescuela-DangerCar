@@ -114,9 +114,9 @@ require 'PHPMailer/SMTP.php';
             <div class="col-6">
                 <h4>Servicios</h4>
                 <ul class="list-group  list-group-flush">
-                    <li href="" class="list-group-item" id="carnetMoto">Carnet de Moto</li>
-                    <li class="list-group-item " id="carnetCoche">Carnet de Coche</li>
-                    <li class="list-group-item" id="carnetCamion">Carnet de Camión</li>
+                    <li class="list-group-item" ><a class="text-decoration-none text-black" href="PaginaCarnetCoche.html">Carnet de Coche</a></li>
+                    <li class="list-group-item" ><a class="text-decoration-none text-black" href="PaginaCarnetMoto.html">Carnet de Moto</a></li>
+                    <li class="list-group-item" ><a class="text-decoration-none text-black" href="PaginaCarnetCamion.html">Carnet de Camión</a></li>
                 </ul>
             </div>
         </div>
@@ -135,11 +135,6 @@ require 'PHPMailer/SMTP.php';
     </nav>
 
 </footer>
-
-<script src="../js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
 
 <?php
 if (isset($_POST['enviar'])) {
@@ -193,4 +188,6 @@ if (isset($_POST['enviar'])) {
 }
 
 ?>
-
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

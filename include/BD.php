@@ -17,7 +17,7 @@ class Base{
 
     public static function comprobarUsuario($usuario, $clave){
         try {
-            $sql="select * from alumnos where nombreUsuario like '$usuario' and passwd  like '$clave'";
+            $sql="select * from usuarios where nombreUsuario like '$usuario' and passwd  like '$clave'";
             $conexion=self::realizarConexion();
             $resultado=$conexion->query($sql);
             $fila = $resultado->fetch();
@@ -35,7 +35,7 @@ class Base{
 
     public static function insertar_alumno($dni,$fechaN, $nombre, $apellidos, $localidad, $provincia, $codPostal, $calle, $carnetPosesion,$gmail,$passwd){
         try {
-            $sql="insert into alumnos (DNI,FechaNacimiento,Nombre,Apellidos,Localidad,Provincia, CodigoPostal, Calle, CarnetPosesion,nombreUsuario,passwd)";
+            $sql="insert into usuarios (DNI,FechaNacimiento,Nombre,Apellidos,Localidad,Provincia, CodigoPostal, Calle, CarnetPosesion,nombreUsuario,passwd)";
             $sql.="VALUES ('$dni', '$fechaN','$nombre','$apellidos','$localidad','$provincia','$codPostal','$calle','$carnetPosesion','$gmail','$passwd')";
             $conexion=self::realizarConexion();
             $afectados=$conexion->exec($sql);

@@ -106,10 +106,7 @@ background-image: url('../img/fondo.jpg');
 .encuentranos{
     background-color: #a0c0a0;
 }
-.cuadros{
-    border: 1px solid red;
-    height: 380px;
-}
+
 
 .heroContacto {
     font-family: fantasy;
