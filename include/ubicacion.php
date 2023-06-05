@@ -1,3 +1,14 @@
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PhpMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,11 +77,24 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-6">
-                    <h3 class="text-center">¿Dónde nos encontramos?</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25106.573204752855!2d-6.20073100014479!3d38.13271315817035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd13e82748220219%3A0x12a52653aad8c093!2sC.%20Llerena%2C%2006291%2C%20Badajoz!5e0!3m2!1ses!2ses!4v1685965434040!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <h3 class="text-center fw-bold">¿Dónde nos encontramos?</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3712737644823!2d-6.216513610403045!3d38.153262717805255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd13e820b0184d5f%3A0xc3e4c80b825fc20c!2sC.%20Llerena%2C%201%2C%2006291%20Montemol%C3%ADn%2C%20Badajoz!5e1!3m2!1ses!2ses!4v1685966011428!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-6">
+                    <h3 class="text-center fw-bold">Escríbenos</h3>
+                    <form name="form1" method="post" action="ubicacion.php">
 
+                        <br><label for="exampleInputName" class="form-label fw-bold">Introduce tu nombre</label>
+                        <input type="text" class="form-control" name="frmNombre"  id="exampleInputName" aria-describedby="emailHelp">
+                        <label for="exampleInputEmail" class="mt-3 form-label fw-bold">Correo electronico</label>
+                        <input type="email" class="form-control" name="frmGmail"  id="exampleInputEmail" placeholder="Introduce tu cuenta de correo">
+                        <label for="exampleInputAsunto" class="mt-3 form-label fw-bold">Asunto</label>
+                        <input type="text" class="form-control" name="frmAsunto"  id="exampleInputAsunto">
+                        <label for="exampleInputMotivos" class="mt-3 form-label fw-bold">Mensaje</label>
+                        <input type="text" class="form-control" name="frmMotivos"  id="exampleInputMotivos" placeholder="Expone tus dudas aquí">
+                        <button type="submit" name="enviar" class="mt-4 btn btn-secondary btn-outline-light">Enviar</button>
+                </div>
+                </form>
                 </div>
             </div>
         </div>
@@ -117,4 +141,56 @@
 
 </html>
 
+<?php
+if (isset($_POST['enviar'])) {
+
+    $nombre = $_POST['frmNombre'];
+    $gmail = $_POST['frmGmail'];
+    $asunto = $_POST['frmAsunto'];
+    $mensaje = $_POST['frmMotivos'];
+
+    $mail = new PHPMailer(true);
+
+    try {
+
+        $mail->SMTPDebug = 0;                      // 0 o 2 para mostrar errores
+        $mail->isSMTP();                                            // Send using SMTP
+        $mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
+        $mail->SMTPAuth = true;                                   // Enable SMTP authentication
+        $mail->Username = 'fjrodriguezl@educarex.es';    // SMTP username
+        $mail->Password = 'yqffyfbukbnjdaff';                               // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+        $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+
+        //Recipients
+        $mail->setFrom($gmail);   //quien lo envia, en este caso nosotros mismo
+        $mail->addAddress('fjrodriguezl@educarex.es');     // Añado si quiero otra cuenta a enviar
+
+
+        // Attachments PARA ADJUNTAR IMAGENES O ARCHIVOS
+        //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+        //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+        // Content
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = $asunto; //Aqui el asunto
+        $texto = "Gmail: ".$gmail."<br> Nombre: ".$nombre."<br> Motivos: ". $mensaje;
+        $mail->Body = $texto;
+
+
+        $mail->send();
+
+    } catch (Exception $e) {
+
+    }
+}
+
+?>
 
