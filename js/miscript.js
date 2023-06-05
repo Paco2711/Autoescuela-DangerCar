@@ -33,31 +33,10 @@ $(document).ready(function() {
             }
         });
     })
-    $("#menuPermisosCoche,#carnetCoche").click(function () {
+
+    $("#carnetA1").click(function (){
         $.ajax({
-            url: "include/PaginaCarnetCoche.html",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
-    $("#menuPermisosMoto,#carnetMoto").click(function () {
-        $.ajax({
-            url: "include/PaginaCarnetMoto.html",
-            success: function (respuesta) {
-                $("#General").html(respuesta);
-            },
-            error: function () {
-                console.log("No se ha podido obtener la información");
-            }
-        });
-    })
-    $("#menuPermisosCamion,#carnetCamion").click(function () {
-        $.ajax({
-            url: "include/PaginaCarnetCamion.html",
+            url: "tiposCarnet/carnetA1.html",
             success: function (respuesta) {
                 $("#General").html(respuesta);
             },
