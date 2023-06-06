@@ -3,7 +3,7 @@ require_once "../include/tablas/usuarios.php";
 class Base{
     public static function realizarConexion(){
         try {
-            $conexion = new PDO("mysql:host=access964577020.webspace-data.io; dbname=db5013291447","881316364","_Fj2711rl01");
+            $conexion = new PDO("mysql:host=db5013291447.hosting-data.io; dbname=dbs11147195","dbu5020947","Daw_2023");
             //$conexion = new PDO("mysql:host=$servidor;dbname=$nombreBD;charset=utf8", $usuario, $clave);
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conexion->exec("SET CHARACTER SET utf8");
@@ -23,24 +23,6 @@ class Base{
             $fila = $resultado->fetch();
             if ($fila!=null){
                 return $fila;
-            }else{
-                return null;
-                $fila = $resultado->fetch();
-
-            }
-        } catch (PDOException $e) {
-            echo $sql . "<br>" . $e->getMessage();
-        }
-    }
-
-    public static function obtenerRol($usuario, $clave){
-        try {
-            $sql="select rol from usuarios where nombreUsuario like '$usuario' and passwd like '$clave'";
-            $conexion=self::realizarConexion();
-            $resultado=$conexion->query($sql);
-            $rol = $resultado->fetch();
-            if ($rol!=null){
-                return $rol;
             }else{
                 return null;
                 $fila = $resultado->fetch();

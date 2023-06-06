@@ -43,18 +43,17 @@ if (isset($_POST['iniciar'])){
     $usuario = $_POST['frmGmail'];
     $passwd = $_POST['passwd'];
     $mensaje = Base::comprobarUsuario($usuario,$passwd);
-
-    if ($mensaje != false){
-        $array_rol = Base::getRol($usuario,$passwd);
-        foreach ($array_rol as $rol) {
-            $rolF = $rol->getRol();
-        }
-        if ($rolF=="profesor"){
-            header('location:paginaProfesor.html');
-        }else{
-            header('Location:paginaUsuario.html');
-        }
-
+    $array_rol = Base::getRol($usuario,$passwd);
+    foreach ($array_rol as $rol) {
+        $rolF = $rol->getRol();
+    }
+    if ($mensaje != false && $rolF=='profesor' ){
+        echo "Estoy dentro";
+        echo'<script>window.location.href = "paginaProfesor.html"</script>';
+        exit();
+    }elseif ($mensaje != false){
+        echo'<script>window.location.href = "paginaUsuario.html"</script>';
+        exit();
     }else{
         echo '<script>alert("El usuario y/o la contraseña son incorrectas o no existen.")</script>';
 }

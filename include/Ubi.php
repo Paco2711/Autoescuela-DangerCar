@@ -16,7 +16,7 @@ require 'PHPMailer/SMTP.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carnet A</title>
+    <title>Ubicacion</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="../js/jquery-3.6.0.min.js"></script>
@@ -82,7 +82,7 @@ require 'PHPMailer/SMTP.php';
                 </div>
                 <div class="col-6">
                     <h3 class="text-center fw-bold">Escríbenos</h3>
-                    <form name="form1" method="post" action="ubicacion.php">
+                    <form name="form1" method="post" action="Ubi.php">
 
                         <br><label for="exampleInputName" class="form-label fw-bold">Introduce tu nombre</label>
                         <input type="text" class="form-control" name="frmNombre"  id="exampleInputName" aria-describedby="emailHelp">
