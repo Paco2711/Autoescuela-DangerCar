@@ -6,8 +6,8 @@ require_once "../include/tablas/Respuesta.php";
 class Base{
     public static function realizarConexion(){
         try {
-            $conexion = new PDO("mysql:host=db5013291447.hosting-data.io; dbname=dbs11147195","dbu5020947","Daw_2023");
-           // $conexion = new PDO("mysql:host=localhost; dbname=autoescuela","root","");
+            //$conexion = new PDO("mysql:host=db5013291447.hosting-data.io; dbname=dbs11147195","dbu5020947","Daw_2023");
+            $conexion = new PDO("mysql:host=localhost; dbname=autoescuela","root","");
             //$conexion = new PDO("mysql:host=$servidor;dbname=$nombreBD;charset=utf8", $usuario, $clave);
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conexion->exec("SET CHARACTER SET utf8");
@@ -108,7 +108,7 @@ class Base{
         return ($arra_preguntas);
     }
     public static function obtenerRespuesta($codPregunta){
-        $sql="SELECT * FROM respuestas";
+        $sql="SELECT * FROM respuestas where CodigoPregunta like $codPregunta";
         $conexion=self::realizarConexion();
         $resultado=$conexion->prepare($sql);
         $resultado->execute(array());

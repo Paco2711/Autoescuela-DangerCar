@@ -1,7 +1,5 @@
 <?php
 
-namespace PHPMailer\tablas;
-
 class Pregunta{
 
     private $codigoPregunta;

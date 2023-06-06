@@ -31,7 +31,7 @@
     <a class="navbar-brand ms-4"><img width="100" height="75" src="../img/logon-removebg-preview.png" alt="logo" /></a>
     <div class="collapse navbar-collapse">
         <div class="navbar-nav ms-auto me-5">
-            <li class="nav-link"><i class="bi bi-pencil-square"></i><a class="text-decoration-none text-black-50" href="index.html"> Realizar Test</a></li>
+            <li class="nav-link"><i class="bi bi-pencil-square"></i><a class="text-decoration-none text-black-50" href="RealizarTest.php"> Realizar Test</a></li>
             <li class="nav-link" ><button  type="button" class="btn btn-outline-dark login py-0 border-2 text-danger" data-bs-toggle="modal" data-bs-target="#loginInicio">
                 <i class="bi bi-person-fill-lock noRegister" ></i>
             </button><a class="text-decoration-none text-danger" href="../index.html"> Cerrar Sesión</a></li>

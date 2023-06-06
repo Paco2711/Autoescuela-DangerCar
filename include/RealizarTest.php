@@ -41,8 +41,9 @@
     </div>
 </nav>
 
-<div class="shadow mt-4 mb-4">
-    <section>
+<div class="shadow pb-4 ps-4 m-auto mb-3 w-75">
+    <section >
+        <h1 class="text-center mt-3">Realizar Test</h1>
         <form action="pagina2.php" method="post">
         <?php
         include_once("tablas/Usuario.php");
@@ -53,14 +54,15 @@
         $array_preguntas = Base::obtenerPreguntas();
 
         foreach ($array_preguntas as $pregunta){?>
+            <br>
             <label><?php echo $pregunta->getTituloPregunta() ?></label>
             <br>
            <?php $array_respuestas=Base::obtenerRespuesta($pregunta->getCodigoPregunta());
             foreach ($array_respuestas as $respuesta){ ?>
-                <input type="radio" name="radio1" value="suma"><?php echo $respuesta->getNombreRespuesta()?>
+                <input class="ms-4 ps-2" type="radio" name="radio<?php $pregunta->getCodigoPregunta()?>" value="<?php echo $respuesta->getEsCorrecta() ?>"><?php echo " ".$respuesta->getNombreRespuesta()?>
                 <br>
         <?php } }?>
-            <input type="submit" name="Enviar">
+            <button type="submit" name="crear" class="mt-4 p-2 align-items-center btn-secondary btn-outline-light">Enviar respuestas</button>
         </form>
 
     </section>
