@@ -110,10 +110,10 @@ if (isset($_POST['crear'])){
     $carnetPosesion = $_POST['carnetPosesion'];
 
     if ($passwd==$confirmPasswd){
-        $mensaje = Base::insertar_alumno($dni,$fechaNacimiento,$nombre,$apellidos,$localidad,$provincia,$codigoPostal,$calle,$carnetPosesion,$gmail,$passwd);
+        $mensaje = Base::insertar_usuario($dni,$fechaNacimiento,$nombre,$apellidos,$localidad,$provincia,$codigoPostal,$calle,$carnetPosesion,$gmail,$passwd);
         if ($mensaje != false){
             echo '<script>alert("El usuario se ha creado correctamente")</script>';
-            header("location: IniciarSesion.php");
+
         }
     }else{
         echo '<script>alert("Las contraseñas no coinciden")</script>';

@@ -18,6 +18,7 @@ include_once("BD.php");
 </head>
 
 <body class="general">
+<div class="shadow bg-light mt-2 pt-2 pb-1 text-center"><p> Para volver a inicio haz click <a href="../index.html">aquí</a></p></div>
 <div class="m-auto text-center text-white">
 
    <div class="formulario w-50 m-auto">
@@ -44,10 +45,16 @@ if (isset($_POST['iniciar'])){
     $mensaje = Base::comprobarUsuario($usuario,$passwd);
 
     if ($mensaje != false){
-        session_start();
-        $_SESSION["usuario"]=$usuario;
-        header('location:paginaUsuario.html');
-        echo  $usuario;
+        $array_rol = Base::getRol($usuario,$passwd);
+        foreach ($array_rol as $rol) {
+            $rolF = $rol->getRol();
+        }
+        if ($rolF=="profesor"){
+            header('location:paginaProfesor.html');
+        }else{
+            header('Location:paginaUsuario.html');
+        }
+
     }else{
         echo '<script>alert("El usuario y/o la contraseña son incorrectas o no existen.")</script>';
 }

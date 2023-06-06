@@ -3,10 +3,12 @@
 class Usuario {
     private $nombreUsuario;
 	private $password;
+    private $rol;
 
     function __Construct ($registro){
         $this->nombreUsuario = $registro['nombreUsuario'];
-        $this->password = $registro['password'];
+        $this->password = $registro['passwd'];
+        $this->rol = $registro['rol'];
     }
 
     /**
@@ -28,19 +30,34 @@ class Usuario {
     /**
      * @return mixed
      */
-    public function getPassword()
+    public function getPasswd()
     {
-        return $this->password;
+        return $this->passwd;
     }
 
     /**
-     * @param mixed $password
+     * @param mixed $passwd
      */
-    public function setPassword($password)
+    public function setPasswd($passwd)
     {
-        $this->password = $password;
+        $this->password = $passwd;
     }
-    
+
+    /**
+     * @return mixed
+     */
+    public function getRol()
+    {
+        return $this->rol;
+    }
+
+    /**
+     * @param mixed $passwd
+     */
+    public function setRol($rol)
+    {
+        $this->rol = $rol;
+    }
 
 }
 
