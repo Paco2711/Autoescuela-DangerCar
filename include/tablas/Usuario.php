@@ -1,8 +1,5 @@
 <?php
-
-namespace PHPMailer\tablas;
-
-class usuarios{
+class Usuario{
 
     private $dni;
     private $nombre;
@@ -32,7 +29,7 @@ class usuarios{
         $this->apellidos = $registro['Apellidos'];
         $this->fechaNacimiento = $registro['FechaNacimiento'];
         $this->localidad =$registro['Localidad'];
-        $this->carnetPosesion = $registro['carnetPosesion'];
+        $this->carnetPosesion = $registro['CarnetPosesion'];
         $this->nombreUsuario = $registro['nombreUsuario'];
         $this->passwd = $registro['passwd'];
         $this->rol = $registro['rol'];

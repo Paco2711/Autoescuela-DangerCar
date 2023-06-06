@@ -1,5 +1,5 @@
 <?php
-include_once("tablas/usuarios1.php");
+include_once("tablas/Usuario.php");
 include_once("BD.php");
 ?>
 <!DOCTYPE html>
@@ -18,6 +18,7 @@ include_once("BD.php");
 </head>
 
 <body class="general">
+<div class="shadow bg-light mt-2 pt-2 pb-1 text-center"><p> Para volver a inicio haz click <a href="../index.html">aquí</a></p></div>
 <div class=" m-auto text-center text-white">
 
     <div class="formulario w-50 m-auto">

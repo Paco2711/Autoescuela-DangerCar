@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +31,7 @@
     <a class="navbar-brand ms-4"><img width="100" height="75" src="../img/logon-removebg-preview.png" alt="logo" /></a>
     <div class="collapse navbar-collapse">
         <div class="navbar-nav ms-auto me-5">
+            <li class="nav-link"><i class="bi bi-pencil-square"></i><a class="text-decoration-none text-black-50" href="index.html"> Realizar Test</a></li>
             <li class="nav-link" ><button  type="button" class="btn btn-outline-dark login py-0 border-2 text-danger" data-bs-toggle="modal" data-bs-target="#loginInicio">
                 <i class="bi bi-person-fill-lock noRegister" ></i>
             </button><a class="text-decoration-none text-danger" href="../index.html"> Cerrar Sesión</a></li>
@@ -41,42 +40,62 @@
 
     </div>
 </nav>
-<div id="contenedor">
-    <?php
-    require_once "tablas/Usuario.php";
-    require_once "BD.php";
+<div class="">
+<section class="text-center mt-3 mb-3 bg-light pb-3">
+    <div class="container text-center mt-4">
+        <div ps-0 class="row text-center align-content-center align-items-center">
+            <div class="col-6 mt-4">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-71_HOZ-Gq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="col-6">
+                <h1 class="fw-bolder">Tutorial Teórico Carnet Tipo B</h1>
+            </div>
 
-    $array_usuarios= Base::obtenerUsuarios();
+        </div>
+    </div>
+</section>
+    <section class="text-center mt-3 mb-3 bg-light pb-3">
+        <div class="container text-center mt-4">
+            <div ps-0 class="row text-center align-content-center align-items-center">
+                <div class="col-6 mt-4">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/UmRcdCyVetQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="col-6">
+                    <h1 class="fw-bolder">Tutorial Señales Verticales de Tráfico</h1>
+                </div>
 
-    if (isset($_REQUEST['iddni'])){
-        $codigo = $_REQUEST['iddni'];
-        Base::borrar_usuario($codigo);
-        header('Location:/include/paginaProfesor.php');
-    }
-    ?>
-    <table class="table">
-        <tr>
-            <th>DNI</th>
-            <th>Nombre y Apellidos</th>
-            <th>Carnet en Posesion</th>
-            <th>Localidad</th>
-            <th>Eliminar</th>
-        </tr>
-        <?php
+            </div>
+        </div>
+    </section>
+    <section class="text-center mt-3 mb-3 bg-light pb-3">
+        <div class="container text-center mt-4">
+            <div ps-0 class="row text-center align-content-center align-items-center">
+                <div class="col-6 mt-4">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cPhg6FpSug4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                <div class="col-6">
+                    <h1 class="fw-bolder">Tutorial Señales Difíciles</h1>
+                </div>
 
-    foreach ($array_usuarios as $user){ ?>
-        <tr>
-            <td><?php echo $user->getDni() ?></td>
-            <td><?php echo $user->getNombre()?> <?php echo $user->getApellidos()?>  </td>
-            <td ><?php echo $user->getCarnetPosesion() ?></td>
-            <td><?php echo $user->getLocalidad() ?><td>
-            <td><a href="paginaProfesor.php?iddni=<?Php echo $user->getDni() ?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
-        </tr>
-        </form>
-        <?php } ?>
-    </table>
-    <br>
+            </div>
+        </div>
+    </section>
+    <section class="text-center mt-3 mb-3 bg-light pb-3">
+        <div class="container text-center mt-4">
+            <div ps-0 class="row text-center align-content-center align-items-center">
+                <div class="col-6 mt-4">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/38TixiIlNiw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="col-6">
+                    <h1 class="fw-bolder">Tutorial Maniobras</h1>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 </div>
+
 <footer class="text-white" id="pie">
     <div class="container text-center">
         <div ps-0 class="row align-items-start">

@@ -1,5 +1,5 @@
 <?php
-include_once("tablas/usuarios1.php");
+include_once("tablas/Usuario.php");
 include_once("BD.php");
 ?>
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ if (isset($_POST['iniciar'])){
         echo'<script>window.location.href = "paginaProfesor.php"</script>';
         exit();
     }elseif ($mensaje != false){
-        echo'<script>window.location.href = "paginaUsuario.html"</script>';
+        echo'<script>window.location.href = "paginaUsuario.php"</script>';
         exit();
     }else{
         echo '<script>alert("El usuario y/o la contraseña son incorrectas o no existen.")</script>';

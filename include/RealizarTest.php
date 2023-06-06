@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carnet de Coche</title>
+    <title>Realizar Tests</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="../js/jquery-3.6.0.min.js"></script>
@@ -33,50 +31,42 @@
     <a class="navbar-brand ms-4"><img width="100" height="75" src="../img/logon-removebg-preview.png" alt="logo" /></a>
     <div class="collapse navbar-collapse">
         <div class="navbar-nav ms-auto me-5">
+            <li class="nav-link"><i class="bi bi-skip-backward-fill"></i><a class="text-decoration-none text-black-50" href="">Volver</a></li>
             <li class="nav-link" ><button  type="button" class="btn btn-outline-dark login py-0 border-2 text-danger" data-bs-toggle="modal" data-bs-target="#loginInicio">
-                <i class="bi bi-person-fill-lock noRegister" ></i>
-            </button><a class="text-decoration-none text-danger" href="../index.html"> Cerrar Sesión</a></li>
+                    <i class="bi bi-person-fill-lock noRegister" ></i>
+                </button><a class="text-decoration-none text-danger" href="../index.html"> Cerrar Sesión</a></li>
 
         </div>
 
     </div>
 </nav>
-<div id="contenedor">
-    <?php
-    require_once "tablas/Usuario.php";
-    require_once "BD.php";
 
-    $array_usuarios= Base::obtenerUsuarios();
-
-    if (isset($_REQUEST['iddni'])){
-        $codigo = $_REQUEST['iddni'];
-        Base::borrar_usuario($codigo);
-        header('Location:/include/paginaProfesor.php');
-    }
-    ?>
-    <table class="table">
-        <tr>
-            <th>DNI</th>
-            <th>Nombre y Apellidos</th>
-            <th>Carnet en Posesion</th>
-            <th>Localidad</th>
-            <th>Eliminar</th>
-        </tr>
+<div class="shadow mt-4 mb-4">
+    <section>
+        <form action="pagina2.php" method="post">
         <?php
+        include_once("tablas/Usuario.php");
+        include_once("tablas/Pregunta.php");
+        include_once("tablas/Respuesta.php");
+        include_once("BD.php");
 
-    foreach ($array_usuarios as $user){ ?>
-        <tr>
-            <td><?php echo $user->getDni() ?></td>
-            <td><?php echo $user->getNombre()?> <?php echo $user->getApellidos()?>  </td>
-            <td ><?php echo $user->getCarnetPosesion() ?></td>
-            <td><?php echo $user->getLocalidad() ?><td>
-            <td><a href="paginaProfesor.php?iddni=<?Php echo $user->getDni() ?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
-        </tr>
+        $array_preguntas = Base::obtenerPreguntas();
+
+        foreach ($array_preguntas as $pregunta){?>
+            <label><?php echo $pregunta->getTituloPregunta() ?></label>
+            <br>
+           <?php $array_respuestas=Base::obtenerRespuesta($pregunta->getCodigoPregunta());
+            foreach ($array_respuestas as $respuesta){ ?>
+                <input type="radio" name="radio1" value="suma"><?php echo $respuesta->getNombreRespuesta()?>
+                <br>
+        <?php } }?>
+            <input type="submit" name="Enviar">
         </form>
-        <?php } ?>
-    </table>
-    <br>
+
+    </section>
 </div>
+
+
 <footer class="text-white" id="pie">
     <div class="container text-center">
         <div ps-0 class="row align-items-start">

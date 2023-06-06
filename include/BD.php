@@ -1,9 +1,13 @@
 <?php
-require_once "../include/tablas/usuarios.php";
+require_once "../include/tablas/Usuario.php";
+require_once "../include/tablas/Pregunta.php";
+require_once "../include/tablas/Respuesta.php";
+
 class Base{
     public static function realizarConexion(){
         try {
             $conexion = new PDO("mysql:host=db5013291447.hosting-data.io; dbname=dbs11147195","dbu5020947","Daw_2023");
+           // $conexion = new PDO("mysql:host=localhost; dbname=autoescuela","root","");
             //$conexion = new PDO("mysql:host=$servidor;dbname=$nombreBD;charset=utf8", $usuario, $clave);
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $conexion->exec("SET CHARACTER SET utf8");
@@ -63,7 +67,7 @@ class Base{
     }
     public static function borrar_usuario($dni){
         try{
-            $sql="DELETE FROM `comidas` WHERE  DNI  = :n_borrar";
+            $sql="DELETE FROM `usuarios` WHERE  DNI  = :n_borrar";
             $conexion=self::realizarConexion($sql);
             $resultado=$conexion->prepare($sql);
             $resultado->execute(array(":n_borrar"=> $dni));
@@ -88,5 +92,32 @@ class Base{
         $resultado->closeCursor();
         $conexion=null;
         return ($arra_usuarios);
+    }
+
+    public static function obtenerPreguntas(){
+        $sql="SELECT * FROM preguntas";
+        $conexion=self::realizarConexion();
+        $resultado=$conexion->prepare($sql);
+        $resultado->execute(array());
+        $arra_preguntas=array();
+        while ($fila=$resultado->fetch()){
+            $arra_preguntas[]= new Pregunta($fila);
+        }
+        $resultado->closeCursor();
+        $conexion=null;
+        return ($arra_preguntas);
+    }
+    public static function obtenerRespuesta($codPregunta){
+        $sql="SELECT * FROM respuestas";
+        $conexion=self::realizarConexion();
+        $resultado=$conexion->prepare($sql);
+        $resultado->execute(array());
+        $arra_respuestas=array();
+        while ($fila=$resultado->fetch()){
+            $arra_respuestas[]= new Respuesta($fila);
+        }
+        $resultado->closeCursor();
+        $conexion=null;
+        return ($arra_respuestas);
     }
 }

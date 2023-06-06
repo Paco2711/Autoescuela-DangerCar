@@ -1,10 +1,4 @@
-<?php
 
-require 'PhpMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +99,7 @@ require 'PHPMailer/SMTP.php';
         <div ps-0 class="row align-items-start">
             <div class="col-6">
                 <h4>Nosotros</h4>
-                <p class="text-start">En Autoescuela DangerCar llebamos más de 20 años ofreciéndote la mejor calidad y el mejor precio del mercado. Contamos con profesores altamente cualificados y experimentados.</p>
+                <p class="text-start">En Autoescuela DangerCar llevamos más de 20 años ofreciéndote la mejor calidad y el mejor precio del mercado. Contamos con profesores altamente cualificados y experimentados.</p>
 
             </div>
             <div class="col-6">
@@ -134,6 +128,13 @@ require 'PHPMailer/SMTP.php';
 </footer>
 
 <?php
+
+
+require 'PhpMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+
+
 if (isset($_POST['enviar'])) {
 
     $nombre = $_POST['frmNombre'];
