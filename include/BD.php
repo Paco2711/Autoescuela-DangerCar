@@ -1,5 +1,5 @@
 <?php
-require_once "../include/tablas/usuarios.php";
+require_once "../include/tablas/usuarios1.php";
 class Base{
     public static function realizarConexion(){
         try {

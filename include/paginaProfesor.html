@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoescuela DangerCar</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Carnet de Coche</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/miscript.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/miscript.js"></script>
 </head>
 
 <body>
@@ -28,26 +28,12 @@
     </nav>
 </header>
 <nav id="barraopciones" class="container-fluid navbar navbar-expand-lg navbar-light bg-light navigation-wrap fw-bold">
-    <a class="navbar-brand ms-4"><img width="100" height="75" src="img/logon-removebg-preview.png" alt="logo" /></a>
+    <a class="navbar-brand ms-4"><img width="100" height="75" src="../img/logon-removebg-preview.png" alt="logo" /></a>
     <div class="collapse navbar-collapse">
         <div class="navbar-nav ms-auto me-5">
-            <li class="nav-link"><i class="bi bi-house-fill"></i><a class="text-decoration-none text-black-50" href="index.html"> Inicio</a></li>
-            <li class="nav-link"><i class="bi bi-geo-fill"></i><a class="text-decoration-none text-black-50" href="include/Ubi.php"> Contacto </a> <i class="bi bi-telephone-fill"></i></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="MenuPermisos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-person-vcard"></i> Permisos
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a  class="dropdown-item fw-bold" href="include/PaginaCarnetCoche.html" >COCHE</a></li>
-                    <li><a class="dropdown-item fw-bold" href="include/PaginaCarnetMoto.html" >MOTO</a></li>
-                    <li><a class="dropdown-item fw-bold" href="include/PaginaCarnetCamion.html">CAMION</a></li>
-                </ul>
-            </li>
-
             <li class="nav-link" ><button  type="button" class="btn btn-outline-dark login py-0 border-2 text-danger" data-bs-toggle="modal" data-bs-target="#loginInicio">
                 <i class="bi bi-person-fill-lock noRegister" ></i>
-            </button><a class="text-decoration-none text-danger" href="include/IniciarSesion.php"> Inciar Sesión</a></li>
+            </button><a class="text-decoration-none text-danger" href="../index.html"> Cerrar Sesión</a></li>
 
         </div>
 
@@ -56,161 +42,8 @@
 
 <div id="General">
 
-    <section class="titular container-fluid bg-image p-5 ">
-        <div class="d-flex  align-items-start h-100">
-            <div class="text-start">
-                <p  class=" tituloLibertad">¡Aquí comienza tu libertad! Conviertete en el mejor conductor en Autoescuela Danger Car</p>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="text-center mt-3 mb-3 bg-light pb-3">
-        <h1 class="shadow pt-3 pb-3">¿Por qué nos eligen nuestros alumnos?</h1>
-        <div class="container text-center mt-4">
-            <div ps-0 class="row text-center align-content-center">
-                <div class="col-1"></div>
-                <div class="text-start col-3 ps-3 pe-3 ">
-                    <h2 class="text-center">Calidad</h2>
-                    <li>Con nosotros, la teoría, a la primera. Más de un 90% de nuestros alumnos aprueban en su primera convocatoria.</li>
-                    <li>Prácticas en coches nuevos y por recorridos de exámenes habituales. Renovamos nuestra flota constantemente.</li>
-                    <li>Más de 20 años de experiencia.</li>
-                </div>
-                <div class="col-1"></div>
-                <div class="text-start col-3 ps-3 pe-3">
-                    <h2 class="text-center">Adaptabilidad</h2>
-                    <li>Cursos intensivos para preparar tu examen teórico, en horarios de mañana y tarde, y cursos entre semana y fines de semana. No tienes excusas.</li>
-                    <li>Plataforma de test con inteligencia artificial. Los test se adaptan a tus conocimientos.</li>
-                    <li>Nos adaptamos a tus horarios en las prácticas, porque, para nosotros, tú estas por encima de todo.</li>
-                </div>
-                <div class="col-1"></div>
-                <div class="text-start col-3 ps-3 pe-3 ">
-                    <h2 class="text-center">Precio</h2>
-                    <li>Creemos que el precio es importante, pero la calidad de la enseñanza lo es más aún. Mira nuestros precios y nuestras valoraciones. Un carnet barato puede salir muy caro. ¡No tenemos competencia!</li>
-                    <li>Promociones siempre activas, busca los mejores precios en nuestras sedes o web.</li>
-                    <li>¿Practicas a 3€ y con coches nuevos? No puede ser, pero si que tenemos prácticas de calidad y coches MUY NUEVOS.</li>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="team ">
-        <div class="container ">
-            <h1 class="text-center tituloSeccion mb-3">Nuestro equipo</h1>
-            <div class="row ">
-                <div class="col-md-3 col-sm-12 item ">
-                    <div class="fotoYDescripcion"> <!--Metida para centrar perfectamente lo naranja-->
-                        <img src="img/persona1.jpeg" class="img-fluid " alt="equipo ">
-                        <div class="des d-flex justify-content-center align-items-center">
-                            <span>Juan Rodriguez</span>
-                        </div>
-                    </div>
-                    <span class="text-muted d-block ">Profesor de Prácticas</span>
-                </div>
-                <div class="col-md-3 col-sm-12 item ">
-                    <div class="fotoYDescripcion">
-                        <img src="img/persona6.jpeg " class="img-fluid " alt="equipo ">
-                        <div class="des d-flex justify-content-center align-items-center">
-                            Lorena Santos
-                        </div>
-                    </div>
-                    <span class="text-muted d-block ">Administrativa</span>
-                </div>
-                <div class="col-md-3 col-sm-12 item ">
-                    <div class="fotoYDescripcion">
-                        <img src="img/persona3.jpeg " class="img-fluid " alt="equipo ">
-                        <div class="des d-flex justify-content-center align-items-center">
-                            Steven Sanchez
-                        </div>
-                    </div>
-                    <span class="text-muted d-block ">Director</span>
-                </div>
-                <div class="col-md-3 col-sm-12 item ">
-                    <div class="fotoYDescripcion">
-                        <img src="img/persona4.jpeg" class="img-fluid " alt="equipo ">
-                        <div class="des d-flex justify-content-center align-items-center">
-                            José Garrido
-                        </div>
-                    </div>
-                    <span class="text-muted d-block ">Profesor del teórico</span>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col-md-3 col-sm-12 item ">
-                    <div class="fotoYDescripcion">
-                        <img src="img/profesor4.jpeg" class="img-fluid " alt="equipo ">
-                        <div class="des d-flex justify-content-center align-items-center">
-                            <span>Joaquin Reyes</span>
-                        </div>
-                    </div>
-                    <span class="text-muted d-block ">Profesor de Prácticas</span>
-                </div>
-                <div class="col-md-3 col-sm-12 item ">
-                    <div class="fotoYDescripcion">
-                        <img src="img/profesor%202.jpeg " class="img-fluid " alt="equipo ">
-                        <div class="des d-flex justify-content-center align-items-center">
-                            Ezequiel Santos
-                        </div>
-                    </div>
-                    <span class="text-muted d-block ">Profesor de Prácticas</span>
-                </div>
-                <div class="col-md-3 col-sm-12 item ">
-                    <div class="fotoYDescripcion">
-                        <img src="img/profesor3.jpeg " class="img-fluid " alt="equipo ">
-                        <div class="des d-flex justify-content-center align-items-center">
-                            Celia Sancho
-                        </div>
-                    </div>
-                    <span class="text-muted d-block ">Profesora de Prácticas</span>
-                </div>
-                <div class="col-md-3 col-sm-12 item ">
-                    <div class="fotoYDescripcion">
-                        <img src="img/profesor1.jpeg" class="img-fluid " alt="equipo ">
-                        <div class="des d-flex justify-content-center align-items-center">
-                            Juan Carlos López
-                        </div>
-                    </div>
-                    <span class="text-muted d-block ">Profesor de Prácticas</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="encuentranos pt-3 pb-3">
-        <h2 class="text-center fw-bolder pe-4">Encuentranos aquí <i class="bi bi-box-arrow-in-right"></i><a class="btn" href="include/Ubi.php" role="button">Click Aquí</a></h2>
-    </div>
-
-    <section class="text-center mt-3 mb-3">
-        <div class="container text-center mt-4">
-            <div ps-0 class="row m-auto">
-                <div class="col-1"></div>
-                <div class="col-3 ps-3 pe-3 ">
-                    <img src="img/grupo-de-usuarios.png" class="w-25">
-                    <p class="fw-bolder">ATENCIÓN PERSONALIZADAS</p>
-                    <p>Gran equipo a tu disposición en nuestros 5 centros con horario L a V de 10:00 a 14:00 y 17:00 a 20:00. Y todas las gestiones también ONLINE.</p>
-                </div>
-                <div class="col-1"></div>
-                <div class="col-3 ps-3 pe-3">
-                    <img src="img/casilla-de-verificacion.png" class="w-25">
-                    <p class="fw-bolder">FÁCIL Y RÁPIDO</p>
-                    <p>Más de 1148 Alumnos en 2022.<br>
-                        Más de 20 años formando alumnos.</p>
-                </div>
-                <div class="col-1"></div>
-                <div class=" col-3 ps-3 pe-3 ">
-                    <img src="img/computadora.png" class="w-25">
-                    <p class="fw-bolder">INNOVACIÓN</p>
-                    <p>Tutor con Whatsapp.<br>
-                        Video-Clases ONLINE exclusivas de nuestros profesores.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 </div>
 <footer class="text-white" id="pie">
-
     <div class="container text-center">
         <div ps-0 class="row align-items-start">
             <div class="col-6">
@@ -221,9 +54,9 @@
             <div class="col-6">
                 <h4>Servicios</h4>
                 <ul class="list-group  list-group-flush">
-                    <li class="list-group-item" ><a class="text-decoration-none text-black" href="include/PaginaCarnetCoche.html">Carnet de Coche</a></li>
-                    <li class="list-group-item" ><a class="text-decoration-none text-black" href="include/PaginaCarnetMoto.html.html">Carnet de Moto</a></li>
-                    <li class="list-group-item" ><a class="text-decoration-none text-black" href="include/PaginaCarnetCamion.html">Carnet de Camión</a></li>
+                    <li class="list-group-item" ><a class="text-decoration-none text-black" href="PaginaCarnetCoche.html">Carnet de Coche</a></li>
+                    <li class="list-group-item" ><a class="text-decoration-none text-black" href="PaginaCarnetMoto.html">Carnet de Moto</a></li>
+                    <li class="list-group-item" ><a class="text-decoration-none text-black" href="PaginaCarnetCamion.html">Carnet de Camión</a></li>
                 </ul>
             </div>
         </div>
@@ -242,7 +75,7 @@
     </nav>
 
 </footer>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

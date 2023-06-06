@@ -1,5 +1,5 @@
 <?php
-include_once("tablas/usuarios.php");
+include_once("tablas/usuarios1.php");
 include_once("BD.php");
 ?>
 <!DOCTYPE html>
