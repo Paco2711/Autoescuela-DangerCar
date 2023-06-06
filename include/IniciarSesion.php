@@ -49,7 +49,7 @@ if (isset($_POST['iniciar'])){
     }
     if ($mensaje != false && $rolF=='profesor' ){
         echo "Estoy dentro";
-        echo'<script>window.location.href = "paginaProfesor.html"</script>';
+        echo'<script>window.location.href = "paginaProfesor.php"</script>';
         exit();
     }elseif ($mensaje != false){
         echo'<script>window.location.href = "paginaUsuario.html"</script>';

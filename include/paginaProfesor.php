@@ -1,3 +1,16 @@
+<?php
+require_once "tablas/usuarios.php";
+require_once "BD.php";
+
+$array_usuarios= Base::obtenerUsuarios();
+
+if (isset($_REQUEST['iddni'])){
+    $codigo = $_REQUEST['iddni'];
+    Base::borrar_usuario($codigo);
+    header('Location:paginaProfesor.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +54,37 @@
 </nav>
 
 <div id="General">
+    <h1>Gestión de Usuarios</h1>
+    <form action="<?Php  echo   $_SERVER['PHP_SELF'];?>" method="post">
 
+</div>
+
+<div id="contenedor">
+
+    <h1>Listado de Comidas del Restaurante</h1>
+    <table>
+        <tr>
+            <th>DNI</th>
+            <th>Nombre y Apellidos</th>
+            <th>Carnet en Posesion</th>
+            <th>Localidad</th>
+            <th>Eliminar</th>
+        </tr>
+        <?php
+
+    foreach ($array_usuarios as $user){ ?>
+        <tr>
+            <td><?php echo $user->getDni() ?></td>
+            <td><?php echo $user->getNombre()?> " "<?php echo $user->getApellidos()?>  </td>
+            <td ><?php echo $user->getCarnetPosesion() ?></td>
+            <td><?php echo $user->getLocalidad() ?><td>
+            <td><a href="paginaProfesor.php?iddni=<?Php echo $user->getDni() ?>"><input type='button' name='del' id='del' value='Borrar'></a></td>
+
+        </tr>
+        </form>s
+        <?php } ?>
+    </table>
+    <br>
 </div>
 <footer class="text-white" id="pie">
     <div class="container text-center">

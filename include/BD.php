@@ -1,5 +1,5 @@
 <?php
-require_once "../include/tablas/usuarios1.php";
+require_once "../include/tablas/usuarios.php";
 class Base{
     public static function realizarConexion(){
         try {
@@ -61,6 +61,32 @@ class Base{
         $conexion=null;
         return $mensaje;
     }
+    public static function borrar_usuario($dni){
+        try{
+            $sql="DELETE FROM `comidas` WHERE  DNI  = :n_borrar";
+            $conexion=self::realizarConexion($sql);
+            $resultado=$conexion->prepare($sql);
+            $resultado->execute(array(":n_borrar"=> $dni));
+            $resultado->closeCursor();
+            $conexion=null;
+            return 1;
+        }catch (PDOException $e){
+            return 0;
 
+        }
+    }
 
+    public static function obtenerUsuarios(){
+        $sql="SELECT * FROM usuarios";
+        $conexion=self::realizarConexion();
+        $resultado=$conexion->prepare($sql);
+        $resultado->execute(array());
+        $arra_usuarios=array();
+        while ($fila=$resultado->fetch()){
+            $arra_usuarios[]= new Usuario($fila);
+        }
+        $resultado->closeCursor();
+        $conexion=null;
+        return ($arra_usuarios);
+    }
 }
