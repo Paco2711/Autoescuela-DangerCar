@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +14,7 @@
 </head>
 
 <body>
+
 <header>
     <nav id="barraarriba" class="navbar navbar-expand-lg text-muted p-0">
         <div class="container-fluid">
@@ -73,6 +72,7 @@
                 </div>
                 <div class="col-6">
                     <h3 class="text-center fw-bold">Escríbenos</h3>
+
                     <form name="form1" method="post" action="Ubi.php">
 
                         <br><label for="exampleInputName" class="form-label fw-bold">Introduce tu nombre</label>
@@ -113,9 +113,9 @@
         </div>
     </div>
 </footer>
-
 <?php
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 require 'PhpMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
