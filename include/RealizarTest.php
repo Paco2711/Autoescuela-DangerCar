@@ -31,7 +31,7 @@
     <a class="navbar-brand ms-4"><img width="100" height="75" src="../img/logon-removebg-preview.png" alt="logo" /></a>
     <div class="collapse navbar-collapse">
         <div class="navbar-nav ms-auto me-5">
-            <li class="nav-link"><i class="bi bi-skip-backward-fill"></i><a class="text-decoration-none text-black-50" href="">Volver</a></li>
+            <li class="nav-link"><i class="bi bi-skip-backward-fill"></i><a class="text-decoration-none text-black-50" href="paginaUsuario.php">Volver</a></li>
             <li class="nav-link" ><button  type="button" class="btn btn-outline-dark login py-0 border-2 text-danger" data-bs-toggle="modal" data-bs-target="#loginInicio">
                     <i class="bi bi-person-fill-lock noRegister" ></i>
                 </button><a class="text-decoration-none text-danger" href="../index.html"> Cerrar Sesión</a></li>
@@ -44,7 +44,7 @@
 <div class="shadow pb-4 ps-4 m-auto mb-3 w-75">
     <section >
         <h1 class="text-center mt-3">Realizar Test</h1>
-        <form action="pagina2.php" method="post">
+        <form action="RealizarTest.php" method="post">
         <?php
         include_once("tablas/Usuario.php");
         include_once("tablas/Pregunta.php");
@@ -55,14 +55,14 @@
 
         foreach ($array_preguntas as $pregunta){?>
             <br>
-            <label><?php echo $pregunta->getTituloPregunta() ?></label>
+            <label><?php echo $pregunta->getCodigoPregunta()?>-<?php echo $pregunta->getTituloPregunta() ?></label>
             <br>
            <?php $array_respuestas=Base::obtenerRespuesta($pregunta->getCodigoPregunta());
             foreach ($array_respuestas as $respuesta){ ?>
-                <input class="ms-4 ps-2" type="radio" name="radio<?php $pregunta->getCodigoPregunta()?>" value="<?php echo $respuesta->getEsCorrecta() ?>"><?php echo " ".$respuesta->getNombreRespuesta()?>
+                <input class="ms-4 ps-2" id="res<?php echo $respuesta->getCodigoRespuesta()?>" type="radio" name="radio<?php echo $pregunta->getCodigoPregunta()?>" value="<?php echo $respuesta->getEsCorrecta() ?>"><?php echo " ".$respuesta->getNombreRespuesta()?>
                 <br>
         <?php } }?>
-            <button type="submit" name="crear" class="mt-4 p-2 align-items-center btn-secondary btn-outline-light">Enviar respuestas</button>
+            <button type="submit" name="enviar" class="mt-4 p-2 align-items-center btn-secondary btn-outline-light">Enviar respuestas</button>
         </form>
 
     </section>
@@ -70,7 +70,7 @@
 
 
 <footer class="text-white" id="pie">
-    <div class="container text-center">
+    <div class="container text-center  pb-3">
         <div ps-0 class="row align-items-start">
             <div class="col-6">
                 <h4>Nosotros</h4>
@@ -87,20 +87,25 @@
             </div>
         </div>
     </div>
-    <nav id="barraAbajo" class="navbar navbar-expand-lg text-muted p-0 ">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse d-lg-flex justify-content-start d-none" id="barraAviso">
-                <div class="navbar-nav ">
-                    <a id="botonAviso" class="nav-link ps-5 pe-4 text-decoration-none text-black">Aviso legal</a>
-                    <a id="botonCookies" class="nav-link  pe-4 text-decoration-none text-black">Política de cookies</a>
-                    <a id="botonProteccion" class="nav-link pe-4 text-decoration-none text-black"> Política de protección de datos</a>
 
-                </div>
-            </div>
-        </div>
-    </nav>
 
 </footer>
+<?php
+if (isset($_POST['enviar'])) {
+    $contador = 0;
+    foreach ($array_preguntas as $pregunt) {
+        $texto = "radio".$pregunt->getCodigoPregunta();
+        $valor=$_REQUEST[$texto];
+        if ($valor==1) {
+            $contador = $contador + 1;
+        }
+    }
+
+    echo '<script>alert("Has acertado '.$contador.' preguntas")</script>';
+}
+?>
+
+
 <script src="../js/bootstrap.bundle.min.js"></script>
 
 </body>

@@ -34,16 +34,16 @@
     <div class="collapse navbar-collapse">
         <div class="navbar-nav ms-auto me-5">
             <li class="nav-link"><i class="bi bi-house-fill"></i><a class="text-decoration-none text-black-50" href="../index.html"> Inicio</a></li>
-            <li class="nav-link"><i class="bi bi-geo-fill"></i><a class="text-decoration-none text-black-50" href="ubicacion.html"> Contacto </a> <i class="bi bi-telephone-fill"></i></li>
+            <li class="nav-link"><i class="bi bi-geo-fill"></i><a class="text-decoration-none text-black-50" href="ubi.php"> Contacto </a> <i class="bi bi-telephone-fill"></i></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="MenuPermisos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-person-vcard"></i> Permisos
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item fw-bold" id="menuPermisosCoche" href="../index.html">COCHE</a></li>
-                    <li><a class="dropdown-item fw-bold" id="menuPermisosMoto" href="../index.html">MOTO</a></li>
-                    <li><a class="dropdown-item fw-bold" id="menuPermisosCamion" href="../index.html">CAMION</a></li>
+                    <li><a  class="dropdown-item fw-bold" href="PaginaCarnetCoche.html">COCHE</a></li>
+                    <li><a class="dropdown-item fw-bold" href="PaginaCarnetMoto.html">MOTO</a></li>
+                    <li><a class="dropdown-item fw-bold" href="PaginaCarnetCamion.html">CAMION</a></li>
                 </ul>
             </li>
 
@@ -95,7 +95,7 @@
 
 
 <footer class="text-white" id="pie">
-    <div class="container text-center">
+    <div class="container text-center pb-3">
         <div ps-0 class="row align-items-start">
             <div class="col-6">
                 <h4>Nosotros</h4>
@@ -112,19 +112,6 @@
             </div>
         </div>
     </div>
-    <nav id="barraAbajo" class="navbar navbar-expand-lg text-muted p-0 ">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse d-lg-flex justify-content-start d-none" id="barraAviso">
-                <div class="navbar-nav ">
-                    <a id="botonAviso" class="nav-link ps-5 pe-4 text-decoration-none text-black">Aviso legal</a>
-                    <a id="botonCookies" class="nav-link  pe-4 text-decoration-none text-black">Política de cookies</a>
-                    <a id="botonProteccion" class="nav-link pe-4 text-decoration-none text-black"> Política de protección de datos</a>
-
-                </div>
-            </div>
-        </div>
-    </nav>
-
 </footer>
 
 <?php
